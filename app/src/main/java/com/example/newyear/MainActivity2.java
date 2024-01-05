@@ -30,6 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
+        Button button7 = findViewById(R.id.button7);
 
         map.put(button1, "你的健康度: ");
         map.put(button2, "你的事業成功率有: ");
@@ -40,11 +41,18 @@ public class MainActivity2 extends AppCompatActivity {
         button2.setOnClickListener(this::onBtnClick);
         button3.setOnClickListener(this::onBtnClick);
         button4.setOnClickListener(this::onBtnClick);
+        button7.setOnClickListener(this::getProducerList);
     }
 
     private void onBtnClick(View view) {
         showCompletionAlertDialog(map.get(view));
     }
+
+    private void getProducerList(View view) {
+        Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+        startActivity(intent);
+    }
+
 
     private void showCompletionAlertDialog(String a) {
         String name = mEdit.getText().toString();
